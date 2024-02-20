@@ -8,7 +8,7 @@ Users can upload an image containing text, and the application will recognize ch
 
 ## Demo
 
-![Preview App](documentation\cap_app.png)
+![Preview App](https://github.com/Deco1985/OCR-Web-App/blob/c297a4f2eaf1d9955bf6811dc9dea9bab39c29ec/documentation/cap_app.png)
 
 ## Vision Statement
 
@@ -40,7 +40,7 @@ Los usuarios pueden cargar una imagen que contenga texto, y la aplicación recon
 
 ## Demo
 
-![Previsualización de la aplicación](documentation\cap_app.png)
+![Previsualización de la aplicación](https://github.com/Deco1985/OCR-Web-App/blob/c297a4f2eaf1d9955bf6811dc9dea9bab39c29ec/documentation/cap_app.png)
 
 ## Visión
 
