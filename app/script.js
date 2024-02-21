@@ -16,14 +16,14 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     reader.readAsDataURL(file);
 });
 
-// Evento para copiar el texto al portapapeles
+// Evento para copiar el texto al portapapeles funció 
 document.getElementById('copyTextButton').addEventListener('click', function(event) {
-    // Obtener el texto reconocido
     const outputText = document.getElementById('output').innerText;
-    // Copiar el texto al portapapeles usando la API del navegador
-    navigator.clipboard.writeText(outputText);
-    // Mostrar un mensaje de confirmación
-    alert('Texto copiado al portapapeles');
+    navigator.clipboard.writeText(outputText).then(function() {
+        alert('Texto copiado al portapapeles');
+    }).catch(function(err) {
+        console.error('Error al copiar al portapapeles: ', err);
+    });
 });
 
 // Función para reconocer el texto en la imagen
