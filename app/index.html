@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deco OCR Scanner</title>
     <link rel="stylesheet" href="styles.css">
-    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
-    <script src="app\Magnifer_library\Magnifier.js"></script>
 </head>
 <body>
     <h1>OCR Web App</h1>
-    <input type="file" id="fileInput" class="file-input">
+    <div class="file-input-container">
+        <input type="file" id="fileInput" class="button button-primary file-input">
+    </div>
     <div id="contentContainer">
         <div id="textPreviewContainer">
-            <div id="output"></div>
-            <textarea id="editedText" rows="5" cols="50" placeholder="Editar texto..."></textarea>
-            <button id="copyTextButton">Copiar Texto</button>
+            <div id="output" class="output"></div>
+            <textarea id="editedText" class="edited-text" rows="5" cols="50" placeholder="Editar texto..."></textarea>
+            <button id="copyTextButton" class="button button-primary">Copiar Texto</button>
         </div>
         <div id="imagePreviewContainer">
-            <img id="imagePreview" src="#" alt="Preview Image">
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+            <img id="imagePreview" src="#" alt="Preview Image" class="image-preview">
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
-

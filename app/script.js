@@ -1,43 +1,61 @@
-// Evento que se dispara cuando se selecciona un archivo en el input file
-document.getElementById('fileInput').addEventListener('change', function(event) {
-    // Obtener el archivo seleccionado
+// script.js - Punto de entrada
+document.addEventListener('DOMContentLoaded', function() {
+  UI.init(); // Inicializa la interfaz de usuario al cargar el documento
+});
+
+// ui.js - Módulo para la interfaz de usuario
+const UI = {
+  init: function() {
+    document.getElementById('fileInput').addEventListener('change', this.handleFileChange);
+    document.getElementById('copyTextButton').addEventListener('click', this.copyTextToClipboard);
+  },
+
+  handleFileChange: function(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
-    // Leer el contenido del archivo como una URL de datos
     reader.onload = function(e) {
-        const imageData = e.target.result;
-        // Mostrar la previsualización de la imagen
-        document.getElementById('imagePreview').src = imageData;
-        // Reconocer el texto en la imagen
-        recognizeImage(imageData);
+      const imageData = e.target.result;
+      UI.updateImagePreview(imageData);
+      OCR.recognizeText(imageData);
     }
 
     reader.readAsDataURL(file);
-});
+  },
 
-// Evento para copiar el texto al portapapeles funció 
-document.getElementById('copyTextButton').addEventListener('click', function(event) {
-    const outputText = document.getElementById('output').innerText;
-    navigator.clipboard.writeText(outputText).then(function() {
-        alert('Texto copiado al portapapeles');
-    }).catch(function(err) {
-        console.error('Error al copiar al portapapeles: ', err);
+  updateImagePreview: function(imageData) {
+    document.getElementById('imagePreview').src = imageData;
+  },
+
+  copyTextToClipboard: function() {
+  const outputText = document.getElementById('editedText').value;
+  navigator.clipboard.writeText(outputText)
+    .then(() => {
+      alert('Texto copiado al portapapeles');
+    })
+    .catch(error => {
+      console.error('Error al copiar texto al portapapeles:', error);
+      alert('Error al copiar texto al portapapeles');
     });
-});
+},
 
-// Función para reconocer el texto en la imagen
-function recognizeImage(imageData) {
-    // Usar Tesseract.js para reconocer el texto en la imagen
+  updateOutput: function(text) {
+    const outputElement = document.getElementById('output');
+    outputElement.innerText = text;
+    document.getElementById('editedText').value = text;
+  }
+};
+
+// ocr.js - Módulo para el procesamiento de OCR
+const OCR = {
+  recognizeText: function(imageData) {
     Tesseract.recognize(
-        imageData, // Datos de la imagen
-        'eng', // Idioma de reconocimiento
-        { logger: m => console.log(m) } // Opciones adicionales (en este caso, para registrar el progreso en la consola)
+      imageData,
+      'eng',
+      { logger: m => console.log(m) } // Opciones adicionales (en este caso, para registrar el progreso en la consola)
     ).then(({ data: { text } }) => {
-        // Mostrar el texto reconocido en el elemento de salida
-        const outputElement = document.getElementById('output');
-        outputElement.innerText = text;
-        // Mostrar el texto reconocido en el área de texto editable
-        document.getElementById('editedText').value = text;
+      UI.updateOutput(text); // Actualiza la salida de texto en la interfaz de usuario
     });
-}
+  }
+};
+
