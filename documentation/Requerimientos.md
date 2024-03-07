@@ -4,7 +4,7 @@
 
 ### **RF-01**: Cargar Imagen
 
-- Los usuarios pueden cargar una imagen desde su dispositivo.
+- Los usuarios pueden cargar una imagen desde su dispositivo o portapapeles.
   
 ### **RF-02**: Previsualizar Imagen
 
@@ -14,112 +14,45 @@
 
 - La aplicación utiliza un motor de OCR para reconocer el texto contenido en la imagen.
 
-### **RF-04**: Mostrar Texto Reconocido
+### **RF-04**: Mostrar Previsualización de Texto Reconocido
 
 - El texto reconocido se muestra en la interfaz de usuario.
 
 ### **RF-05**: Editar Texto Reconocido
 
-- Los usuarios pueden editar el texto reconocido en un área de texto editable.
+- Los usuarios pueden editar el texto obtenido en un área de texto editable. Además, el texto corregido puede ser copiado en el portapapeles.
 
-### **RF-06**: Copiar Texto al Portapapeles
+### **RF-06**: Interfaz de Usuario Intuitiva
 
-- Los usuarios pueden copiar el texto reconocido al portapapeles.
-
-### **RF-07**: Feedback de Operaciones
-
-- Se proporciona feedback al usuario sobre el progreso de las operaciones de reconocimiento de texto.
-
-### **RF-08**: Interfaz de Usuario Intuitiva
-
-- La interfaz de usuario es fácil de usar y comprender.
-
-## Requerimientos No Funcionales (RNF)
+- La aplicación se diseñó en la web desde el inicio para su fácil uso y entendimiento.
+  
 
 ## **Requerimientos No Funcionales (RNF)**
 
 ## **Atributos de Calidad**
-
-### **RNF-01**: Rendimiento
-
-- La aplicación debe ser rápida y eficiente en el reconocimiento de texto.
   
-### **RNF-02**: Usabilidad
+### **RNF-01**: Usabilidad
 
-- La interfaz de usuario debe ser intuitiva y fácil de usar para usuarios de todos los niveles de habilidad.
+- La usabilidad al usuario es el principal atributo de calidad. La interfaz de usuario debe ser intuitiva y fácil de usar para el usuario. En terminos de la aplicación, está diseñada para seguir una serie de pasos para utilizar la pagina web. 
   
-### **RNF-03**: Compatibilidad del Navegador
+### **RNF-02**: Compatibilidad del Navegador
 
-- La aplicación debe ser compatible con los navegadores web más comunes, como Chrome, Firefox y Edge.
+- La aplicación debe ser compatible con los navegadores web más comunes
   
-### **RNF-04**: Seguridad
+### **RNF-04**: Adaptabilidad
 
-- Se debe garantizar la seguridad y privacidad de los datos del usuario durante el procesamiento de imágenes y texto.
-  
-### **RNF-05**: Adaptabilidad
-
-- La aplicación debe ser responsive y adaptarse a diferentes dispositivos y tamaños de pantalla.
+- La aplicación debe ser responsive y adaptarse a diferentes tamaños de pantalla.
   
 ### **Restricciones**
 
-### **RNF-06**: Mantenibilidad
+### **RNF-05**: Mantenibilidad
 
-- El código debe estar bien estructurado y documentado para facilitar su mantenimiento y futuras actualizaciones.
+- El código debe estar bien estructurado y documentado para facilitar su mantenimiento y futuras actualizaciones. Además, la aplicación esta diseñeada para ser escalable y modular; en terminos del proyecto, se planea seguir trabajando en expandir las funcionalidades, por lo que se requiere que el código sea mantenible y escalable.
   
-### **RNF-07**: Fiabilidad
+### **RNF-06**: Fiabilidad
 
 - La aplicación debe ser robusta y confiable, minimizando los errores y fallas durante su funcionamiento.
   
-### **RNF-08**: Disponibilidad
+### **RNF-07**: Disponibilidad
 
 - La aplicación debe estar disponible y accesible para los usuarios en todo momento, con un tiempo de inactividad mínimo.
-
-
-# **Especificaciones**
-
-## **Especificación de RF**
-
-| **RF-01** | **Cargar Imagen** |
-| --- | --- |
-| **Versión** | 1.0 |
-| **Autor** | Equipo de Desarrollo |
-| **Requisito** | La aplicación debe permitir a los usuarios cargar imágenes desde sus dispositivos. |
-| **Descripción General** | - Los usuarios tienen la capacidad de seleccionar y cargar una imagen desde sus dispositivos. |
-| **Precondición** | Disponibilidad de una conexión a Internet y un dispositivo compatible. |
-| **Secuencia Normal** | **Acción** |
-| | Paso 1 - **Seleccionar Imagen**: El usuario selecciona una imagen desde su dispositivo. |
-| | Paso 2 - **Cargar Imagen**: La aplicación carga la imagen seleccionada. |
-| **Excepciones** | **Acción** |
-| | Paso 1 - **Error de Carga**: La aplicación notifica al usuario si hay un error al cargar la imagen. |
-| **Postcondición** | La imagen seleccionada se carga correctamente en la aplicación. |
-| **Impacto** | Medio |
-| **Urgencia** | Alta |
-| **Comentarios** | - |
-
-| **RF-02** | **Previsualizar Imagen** |
-| --- | --- |
-| **Versión** | 1.0 |
-| **Autor** | Equipo de Desarrollo |
-| **Requisito** | La aplicación debe mostrar una previsualización de la imagen cargada. |
-| **Descripción General** | - La imagen seleccionada por el usuario se muestra en la interfaz de usuario antes de ser procesada para el reconocimiento de texto. |
-| **Precondición** | La imagen debe cargarse correctamente en la aplicación. |
-| **Secuencia Normal** | - |
-| **Excepciones** | - |
-| **Postcondición** | La previsualización de la imagen se muestra correctamente en la interfaz de usuario. |
-| **Impacto** | Bajo |
-| **Urgencia** | Media |
-| **Comentarios** | - |
-
-| **RF-03** | **Reconocimiento de Texto** |
-| --- | --- |
-| **Versión** | 1.0 |
-| **Autor** | Equipo de Desarrollo |
-| **Requisito** | La aplicación debe reconocer el texto contenido en la imagen cargada utilizando un motor de OCR. |
-| **Descripción General** | - La aplicación procesa la imagen cargada utilizando un motor de OCR para extraer el texto contenido en la imagen. |
-| **Precondición** | La imagen debe cargarse correctamente en la aplicación. |
-| **Secuencia Normal** | - |
-| **Excepciones** | - |
-| **Postcondición** | El texto contenido en la imagen se extrae correctamente utilizando el motor de OCR. |
-| **Impacto** | Alto |
-| **Urgencia** | Alta |
-| **Comentarios** | - |
